@@ -1,15 +1,29 @@
-class Todo {
-  constructor(configuration) {
-    this.text = configuration.text || 'New TODO'
-    this.checked = false
-  }
-  
-  render() {
-    return (
-      <li>
-        <input type="checkbox" checked={this.checked}
-        <span>{this.text}</span>
-      </li>
-    )
-  }
+// store todos in memory
+let todos = []
+
+function renderTodo(todo) {
+  // render a single todo
+}
+
+function render() {
+  // render the todos in memory to the page
+  list.innerHTML = ''
+  todos.map(renderTodo).forEach(todo => list.appendChild(todo))
+
+  // update counts
+
+  return false
+
+}
+
+function addTodo(name) {
+  const todo = new Todo(name)
+  todos.push(todo)
+  return render()
+}
+
+function removeTodo() {
+  const todo = this.todoRef
+  todos = todos.filter(t => t !== todo)
+  return render()
 }
